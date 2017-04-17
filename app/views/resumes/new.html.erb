@@ -1,0 +1,7 @@
+<h3>提交覆歷到 <%= @job.title %></h3>
+
+<hr>
+<%= simple_form_for [@job, @resumes] %>
+  <%= f.input :content %>
+  <%= f.submit "送出" %>
+  <%= end %>
