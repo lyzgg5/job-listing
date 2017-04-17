@@ -1,27 +1,28 @@
-class UesumesController < ApplicationController
+class ResumesController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @job = Job.find(params[:job_id])
-    @resumes = Resumes.new
-  end
+     @job = Job.find(params[:job_id])
+     @resume = Resume.new
+   end
 
-  def create
-    @job = Job.find(params[:job_id])
-    @resumes = Resumes.new(resumes_params)
-    @resumes.job = @job
+   def create
+     @job = Job.find(params[:job_id])
+     @resume = Resume.new(resume_params)
+     @resume.job = @job
+     @resume.user = current_user
 
-    if @resumes.save
-      flash[:notice] = "成功提交"
-      redirect_to job_path(@job)
-    else
-      render :new
-    end
-  end
+     if @resume.save
+       flash[:notice] = "成功提交履历"
+       redirect_to job_path(@job)
+     else
+       render :new
+     end
+   end
 
+   private
 
-  private
-  def resumes_params
-    resumes.require(:resumes).permit(:content)
-  end
-end
+   def resume_params
+     params.require(:resume).permit(:content)
+   end
+ end

@@ -1,2 +1,2 @@
-module UesumesHelper
+module ResumesHelper
 end
