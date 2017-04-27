@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Job Listing </a>
+            <a class="navbar-brand" href="/"><img src='<%= image_url 'favicon-paw.ico' %>' >24K Offer </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -63,6 +63,7 @@
                       <% if current_user.admin? %>
                       <li> <%= link_to("Admin Penel", admin_jobs_path) %></li>
                       <% end %>
+                      <li role="presentation" class="divider"></li>  <!--加入分隔線-->
                       <li> <%= link_to("退出", destroy_user_session_path, method: :delete) %></li>
                     </ul>
                 </li>
