@@ -49,12 +49,12 @@
               <td>
                 <%= job.created_at %>
               </td>
-              <% if current_user.admin? %>
+              <!-- <% if current_user.admin? %>
               <td>
                 <%= link_to("Edit", edit_job_path(job)) %>   |
                 <%= link_to("Delete", job_path(job), method: :delete, :date => "Are you sure?") %>
               </td>
-              <% end %>
+              <% end %> -->
             </tr>
             <% end %>
           </tbody>
